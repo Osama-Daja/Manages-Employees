@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ManagesGlobitelEmployees.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Search Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+<table class="table">
+    <div class="col border">
+        <div class="counter">
+            <p class="count-text">Search By Name</p>
+            @using (Html.BeginForm("Search", "Account", FormMethod.Post))
+            {
+                <input class="form-control" type="text" name="UserName" id="UserName" placeholder="UserName" />
+            }
+        </div>
+    </div>
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    <a class="far fa-edit fa-lg" asp-action="Edit" asp-route-id="@item.Id"></a> |
+                    <a class="far fa-calendar fa-lg" asp-action="Details" asp-route-id="@item.Id"></a> |
+                    <a class="far fa-trash-alt fa-lg text-danger" asp-action="Delete" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

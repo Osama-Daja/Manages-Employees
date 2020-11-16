@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "Home "+User.Identity.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2 class="text-center">Target Number</h2>
+
+
+    <div class="container">
+        <a class="btn btn-outline-success" asp-action="ExportTargetNumber">Export</a>
+        <div class="row text-center">
+            <div class="col border">
+                <div class="counter">
+                    <i class="fa fa-male fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.MaleEmployee</h2>
+                    <p class="count-text ">Male Employee</p>
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.RangeGenderMale</h2>
+                    <p class="count-text ">Range Female Employee</p>
+                </div>
+            </div>
+            <div class="col border">
+                <div class="counter">
+                    <i class="fa fa-female fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.FemaleEmployee</h2>
+                    <p class="count-text ">Female Employee</p>
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.RangeGenderFemale</h2>
+                    <p class="count-text ">Range Female Employee</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col border">
+                <div class="counter">
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.Range2030</h2>
+                    <p class="count-text ">Age between 20 And 30</p>
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.Range2030Range</h2>
+                    <p class="count-text ">Range Age between 20 And 30</p>
+                </div>
+            </div>
+            <div class="col border">
+                <div class="counter">
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.Range3040</h2>
+                    <p class="count-text ">Age between 30 And 40</p>
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.Range3040Range</h2>
+                    <p class="count-text ">Range Age between 30 And 40</p>
+                </div>
+            </div>
+            <div class="col border">
+                <div class="counter">
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.More40</h2>
+                    <p class="count-text ">More 40</p>
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="timer count-title count-number">@ViewBag.More40Range</h2>
+                    <p class="count-text ">Range More 40</p>
+                </div>
+            </div>
+        </div>
+    </div>

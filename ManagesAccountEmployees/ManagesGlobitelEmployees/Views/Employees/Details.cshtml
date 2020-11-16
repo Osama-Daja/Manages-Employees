@@ -1,0 +1,70 @@
+﻿@model ManagesGlobitelEmployees.Models.Employee
+
+@{
+    ViewData["Title"] = "Details  Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Details Of @Html.DisplayFor(model => model.Name)</h2>
+
+
+    <div class="container border">
+        <div class="row text-center">
+            <div class="col-6 text-center">
+                    <img src="~/Img/profile.png" />
+            </div>
+
+            <div class="col-6 text-center container">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="text-success">
+                                <i class="fa fa-user"></i>
+                                @Html.DisplayNameFor(model => model.Name) :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Name)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-decoration-none">
+                                <i class="fas fa-pager"></i>
+                                @Html.DisplayNameFor(model => model.Age) :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Age)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-dark">
+                                <i class="fas fa-venus-mars"></i>
+                                @Html.DisplayNameFor(model => model.Gender) :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Gender)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">
+                                <i class="far fa-calendar-check"></i>
+                                @Html.DisplayNameFor(model => model.DateOfEmployment) :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.DateOfEmployment)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <a class="far fa-edit fa-lg" asp-action="Edit" asp-route-id="@Model.id"></a>
+                            </td>
+                            <td>
+                                <a asp-action="Index">Back to List</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                 </div>
+        </div>
+    </div>

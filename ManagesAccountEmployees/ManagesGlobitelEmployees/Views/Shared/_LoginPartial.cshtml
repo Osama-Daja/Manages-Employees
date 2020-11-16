@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNet.Identity
+@using ManagesGlobitelEmployees.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="logo">
+        <a href="~/Account/Home" class="simple-text text-center logo-normal">
+            Home
+        </a>
+    </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item text-center active" style="font-size : medium">
+                @Html.ActionLink("Hello " + User.Identity.Name + "!", "Home", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size : medium" href="~/Account/Index">Admins List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size : medium" href="~/Employees/Index">Employees</a>
+            </li>
+            <li><a class="bg-danger" style="font-size : medium" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" href="~/Home/Index">Home </a>
+    </li>
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

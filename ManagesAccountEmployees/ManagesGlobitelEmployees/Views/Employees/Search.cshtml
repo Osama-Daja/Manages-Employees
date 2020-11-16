@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ManagesGlobitelEmployees.Models.Employee>
+
+@{
+    ViewData["Title"] = "Search  Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search List Employee</h2>
+
+<Table class="table">
+    <div class="row text-center">
+        <div class="col border">
+            <div class="counter">
+                <p class="count-text">Male Employee</p>
+                @using (Html.BeginForm("Search", "Employees", FormMethod.Post))
+                {
+                    <input class="form-control" type="text" name="Name" id="Name" placeholder="Name" />
+                }
+            </div>
+        </div>
+        <div class="col border">
+            <div class="counter">
+                <p class="count-text">Male Employee</p>
+                @using (Html.BeginForm("Search", "Employees", FormMethod.Post))
+                {
+                    <input class="form-control" type="text" name="Age" id="Name" placeholder="Age" />
+                }
+            </div>
+        </div>
+        <div class="col border">
+            <div class="counter">
+                <p class="count-text">Male Employee</p>
+                @using (Html.BeginForm("Search", "Employees", FormMethod.Post))
+                {
+                    <input class="form-control" type="text" name="Gender" id="Gender" placeholder="Gender" />
+                }
+            </div>
+        </div>
+    </div>
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    <a class="far fa-edit fa-lg" asp-action="Edit" asp-route-id="@item.id"></a> |
+                    <a class="far fa-calendar fa-lg" asp-action="Details" asp-route-id="@item.id"></a> |
+                    <a class="far fa-trash-alt fa-lg text-danger" asp-action="Delete" asp-route-id="@item.id"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</Table>

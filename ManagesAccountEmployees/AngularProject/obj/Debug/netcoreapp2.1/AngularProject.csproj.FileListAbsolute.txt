@@ -1,0 +1,6 @@
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.csprojAssemblyReference.cache
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.RazorAssemblyInfo.cache
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.RazorAssemblyInfo.cs
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.AssemblyInfoInputs.cache
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.AssemblyInfo.cs
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\AngularProject\obj\Debug\netcoreapp2.1\AngularProject.csproj.CoreCompileInputs.cache

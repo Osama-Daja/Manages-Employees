@@ -1,0 +1,46 @@
+﻿@model ManagesGlobitelEmployees.Models.RolesModel
+
+@{
+    ViewData["Title"] = "Details Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Details Of @Html.DisplayFor(model => model.name)</h2>
+
+<div>
+
+    <div class="container border">
+        <div class="row text-center">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="text-dark">
+                                <i class="fa fa-user"></i>
+                                @Html.DisplayNameFor(model => model.id) :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.id)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-success">
+                                <i class="fa fa-dice-d20"></i>
+                                Name Role :
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <a class="far fa-edit fa-lg" asp-action="EditRole" asp-route-id="@Model.id"></a>
+                            </td>
+                            <td>
+                                <a asp-action="RoleList">Back to List</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>

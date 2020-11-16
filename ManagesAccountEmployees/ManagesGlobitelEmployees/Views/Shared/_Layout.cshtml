@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="~/Fontend/img/favicon.png">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="~/Fontend/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Fontend/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+            <div style="color:darkorange" class="navbar-wrapper">
+                <div class="navbar-toggle">
+                    <button type="button" class="navbar-toggler">
+                        <span class="navbar-toggler-bar bar1"></span>
+                        <span class="navbar-toggler-bar bar2"></span>
+                        <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="sidebar" data-color="orange">
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        @Html.Partial("~/Views/Shared/_LoginPartial.cshtml")
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel" id="main-panel">
+            <div class="container" style="margin:30px;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!--
+                <div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="#">Book Store</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item mr-auto">
+                                    @Html.Partial("~/Views/Shared/_LoginPartial.cshtml")
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+
+            <div class="container">
+                @RenderBody()
+            </div>
+    -->
+    @RenderSection("Scripts", required: false);
+
+    <script src="~/Fontend/js/core/jquery.min.js"></script>
+    <script src="~/Fontend/js/core/popper.min.js"></script>
+    <script src="~/Fontend/js/core/bootstrap.min.js"></script>
+    <script src="~/Fontend/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Fontend/js/plugins/chartjs.min.js"></script>
+    <script src="~/Fontend/js/plugins/bootstrap-notify.js"></script>
+    <script src="~/Fontend/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+
+</body>
+</html>

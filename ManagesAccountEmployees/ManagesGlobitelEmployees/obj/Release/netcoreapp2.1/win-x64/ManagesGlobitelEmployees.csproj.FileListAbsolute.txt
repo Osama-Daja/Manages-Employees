@@ -1,0 +1,1 @@
+E:\ASP.net\ASP.net Core\ManagesAccountEmployees\ManagesGlobitelEmployees\obj\Release\netcoreapp2.1\win-x64\ManagesGlobitelEmployees.csprojAssemblyReference.cache

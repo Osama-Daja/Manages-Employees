@@ -1,0 +1,45 @@
+﻿@model ManagesGlobitelEmployees.Models.Employee
+
+@{
+    ViewData["Title"] = "Create New  Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>New Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label> 
+                <select class="btn btn-secondary btn-lg dropdown-toggle" asp-for="Gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-default" asp-action="Index">Back to List</a>
+</div>
+

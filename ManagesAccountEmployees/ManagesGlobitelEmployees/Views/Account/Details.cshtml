@@ -1,0 +1,58 @@
+﻿@model ManagesGlobitelEmployees.Models.ApplicationUserModel
+
+@{
+    ViewData["Title"] = "Details Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Details Of @Html.DisplayFor(model => model.UserName) Admin</h2>
+
+<div class="container border">
+    <div class="row text-center">
+        <div class="col-6 text-center">
+            <img src="~/Img/profile.png" />
+        </div>
+
+        <div class="col-6 text-center container">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td class="text-success">
+                            <i class="fa fa-user"></i>
+                            @Html.DisplayNameFor(model => model.UserName) :
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-dark">
+                            <i class="fa fa-pen-nib"></i>
+                            @Html.DisplayNameFor(model => model.FullName) :
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.FullName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-dark">
+                            <i class="fa fa-user-tag"></i>
+                            @Html.DisplayNameFor(model => model.Role) :
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Role)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <a class="far fa-edit fa-lg" asp-action="Edit" asp-route-id="@Model.Id"></a>
+                        </td>
+                        <td>
+                            <a asp-action="Index">Back to List</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

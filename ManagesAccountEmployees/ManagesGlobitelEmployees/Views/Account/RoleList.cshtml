@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewData["Title"] = "Role List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles List</h2>
+
+<p>
+    <a class="btn btn-outline-info" asp-action="Createrole">Create New</a>
+</p>
+
+<a class="btn btn-outline-success" asp-action="ExportRolesList">Export</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a class="far fa-edit fa-lg" asp-action="EditRole" asp-route-id="@item.Id"></a> |
+                    <a class="far fa-calendar fa-lg" asp-action="DetailsRole" asp-route-id="@item.Id"></a> |
+                    <a class="far fa-trash-alt fa-lg text-danger" asp-action="DeleteRole" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
