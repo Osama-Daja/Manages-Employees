@@ -1,0 +1,93 @@
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h3 class="card-title">Add Another Account</h3>
+            </div>
+            <div class="card-body">
+              <form #form="ngForm" class="md-4" autocomplete="off" (submit)="onSubmit(form)">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input style="color: black;" readonly type="text" name="id" #id="ngModel" [(ngModel)] = "service.id"
+                      class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">userName</label>
+                        <input style="color: black;" required value="" type="text" name="userName" #userName="ngModel" [(ngModel)] = "service.userName"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">fullName</label>
+                        <input style="color: black;" required value="" type="text" name="fullName" #fullName="ngModel" [(ngModel)] = "service.fullName"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Password</label>
+                        <input style="color: black;" type="password" name="Password" #Password="ngModel" [(ngModel)] = "service.Password"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="">If You Need Change Password Input Old Password To That Account</label>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Old Password</label>
+                        <input style="color: black;" type="password" name="Oldpassword" #Oldpassword="ngModel" [(ngModel)] = "service.Oldpassword"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Register</button>
+              </form>
+              <button (click) = "Clear()" class="btn btn-primary">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12">
+    <div class="card card-plain">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title mt-0">Employee List</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover" style="color: white;">
+            <thead>
+                <td >id</td>
+                <td >userName</td>
+                <td >fullName</td>
+                <td >Role</td>
+        </thead>
+        <tr *ngFor ="let pd of service.list">
+            <td (click) ="populateForm(pd)">{{pd.id}}</td>
+            <td (click) ="populateForm(pd)">{{pd.userName}}</td>
+            <td (click) ="populateForm(pd)">{{pd.fullName}}</td>
+            <td (click) ="populateForm(pd)">{{pd.role}}</td>
+            <td>
+                <i class="far fa-trash-alt fa-lg text-danger" (click) = "onDelete(pd)"></i>
+            </td>
+        </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

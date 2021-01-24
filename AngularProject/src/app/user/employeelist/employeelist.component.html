@@ -1,0 +1,128 @@
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h3 class="card-title">Add Employee</h3>
+            </div>
+            <div class="card-body">
+              <form #form="ngForm" class="md-4" autocomplete="off" (submit)="onSubmit(form)">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input style="color: black;" readonly type="text" name="id" #id="ngModel" [(ngModel)] = "service.id"
+                      class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">name</label>
+                        <input style="color: black;" required value="" type="text" name="name" #name="ngModel" [(ngModel)] = "service.name"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Age</label>
+                        <input style="color: black;" required type="number" name="age" #age="ngModel" [(ngModel)] = "service.age"
+                        class="form-control" required>
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Gender</label>
+                        <select style="color: black;" required type="text" name="gender" #gender="ngModel" [(ngModel)] = "service.gender"
+                        class="form-control" >
+                        <option>Male</option>
+                        <option>Female</option>
+                        </select>
+                     </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input style="color: black;" readonly type="text" name="dateOfEmployment" #dateOfEmployment="ngModel" [(ngModel)] = "service.dateOfEmployment"
+                        class="form-control">
+                     </div>
+                    </div>
+                  </div>
+                <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Register</button>
+              </form>
+              <button (click) = "Clear()" class="btn btn-primary">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="bmd-label-floating">Gender</label>
+                    <select style="color: black;" type="text" name="SearchGenderEmployee" #SearchGenderEmployee="ngModel" [(ngModel)] = "service.SearchGenderEmployee"
+                    class="form-control" placeholder="Gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    </select>
+                  </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Name</label>
+                        <input style="color: black;" required type="text" name="SearchNameEmployee" #SearchNameEmployee="ngModel" [(ngModel)] = "service.SearchNameEmployee"
+                        class="form-control">                    </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type ="button" class="btn btn-primary"  value="Search Employee" (click) = "SearchButton()">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12">
+    <div class="card card-plain">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title mt-0">Admins List</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover" style="color: white;">
+            <thead>
+                <th >id</th>
+                <th >name</th>
+                <th >age</th>
+                <th >gender</th>
+                <th >dateOfEmployment</th>
+        </thead>
+            <tr *ngFor ="let pd of service.Employeelist">
+                <td (click) ="populateForm(pd)">{{pd.id}}</td>
+                <td (click) ="populateForm(pd)">{{pd.name}}</td>
+                <td (click) ="populateForm(pd)">{{pd.age}}</td>
+                <td (click) ="populateForm(pd)">{{pd.gender}}</td>
+                <td (click) ="populateForm(pd)">{{pd.dateOfEmployment}}</td>
+                <td>
+                    <i class="far fa-trash-alt fa-lg text-danger" (click) = "onDelete(pd)"></i>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

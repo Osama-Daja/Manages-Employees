@@ -1,0 +1,35 @@
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h3 class="card-title">Log In</h3>
+            </div>
+            <div class="card-body">
+              <form #form="ngForm" class="md-4" autocomplete="off" (submit)="onSubmit(form)">
+                <label>You Can Log In Useing User Name : Admin And Password : Admin</label>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">User Name</label>
+                      <input class="form-control" #UserName = "ngModel" name="UserName" [(ngModel)] = "formModel.UserName" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Password</label>
+                        <input class="form-control" type="password" #Password = "ngModel" name="Password" [(ngModel)] = "formModel.Password" required>
+                    </div>
+                    </div>
+                  </div>
+                <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Log In</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
