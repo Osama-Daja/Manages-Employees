@@ -30,7 +30,6 @@ namespace ManagesGlobitelEmployees
 
             services.AddDbContext<AuthenticationContext>(options =>
                 options.UseSqlServer("Server=(localDB)\\MSSQLLocalDB;Database=ManagesGlobitelEmployeesDB;Trusted_Connection=true;MultipleActiveResultSets=True;"));
-            //"Data Source=SQL5045.site4now.net;Initial Catalog=DB_A54E91_Osama;User Id=DB_A54E91_Osama_admin;Password=Osama1996^_^;"
             //Server=(localDB)\\MSSQLLocalDB;Database=ManagesGlobitelEmployeesDB;Trusted_Connection=true;MultipleActiveResultSets=True;
 
             services.AddDefaultIdentity<ApplicationUser>()
